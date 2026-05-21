@@ -21,11 +21,14 @@ La app cuenta con **ícono personalizado** y **Splash Screen** configurados para
 
 <!-- Agrega aquí una imagen del ícono o splash screen -->
 | Ícono | Splash Screen |
-|:-:|:-:|
-| ![Ícono](<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/8133d2ab-29bc-4260-8389-0c7278e4013b" />
-![Uploading icon.png…]()
-) | ![Splash](<img width="768" height="1376" alt="image" src="https://github.com/user-attachments/assets/aa5fb2d1-62fa-492f-84e4-034c2427a704" />
-) |
+
+ ![Ícono](<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/8133d2ab-29bc-4260-8389-0c7278e4013b" />
+
+
+| Splash Screen |
+
+ ![Splash](<img width="768" height="1376" alt="image" src="https://github.com/user-attachments/assets/aa5fb2d1-62fa-492f-84e4-034c2427a704" />
+
 
 > _Reemplaza las rutas con las imágenes reales del ícono y splash screen._
 
