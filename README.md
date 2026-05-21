@@ -7,9 +7,18 @@
 ## 📸 Capturas de pantalla
 
 <!-- Agrega aquí las imágenes de la app -->
-| Pantalla principal | Detalle del gadget | Formulario |
-|:-:|:-:|:-:|
-| ![Home](ruta/a/imagen1.png) | ![Detalle](ruta/a/imagen2.png) | ![Form](ruta/a/imagen3.png) |
+| Pantalla principal | 
+<img width="420" height="580" alt="image" src="https://github.com/user-attachments/assets/4018f249-5b0d-4ca3-8bb6-7f265accadaa" />
+
+
+|Detalle del gadget |
+
+<img width="190" height="561" alt="image" src="https://github.com/user-attachments/assets/588ba500-2e2b-4b52-902d-96646cfbfc81" />
+
+|Formulario |
+<img width="207" height="476" alt="image" src="https://github.com/user-attachments/assets/b831e7c3-1f83-43dd-8016-9e109a1113ee" />
+
+
 
 > _Reemplaza las rutas con las imágenes reales de tu proyecto._
 
