@@ -1,0 +1,7 @@
+{
+  "name": "gadgets-tecnologicos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

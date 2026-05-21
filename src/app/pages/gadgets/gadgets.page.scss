@@ -1,0 +1,399 @@
+/* ==========================================
+   🎮 GAMER RGB PRO THEME - FULL RESPONSIVE 🎧
+   ========================================== */
+
+/* Fondo dinámico con grid cyber */
+ion-content.gaming-content {
+  --background: radial-gradient(circle at 20% 30%, #0a0015, #000000 90%);
+  position: relative;
+}
+
+/* Overlay de rejilla gamer */
+ion-content.gaming-content::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 0, 255, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* =====================
+   CARDS GAMER RGB
+   ===================== */
+ion-card.gaming-card {
+  position: relative;
+  background: linear-gradient(145deg, #0c0020, #020008);
+  border-radius: 24px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.3),
+    0 8px 30px rgba(0, 0, 0, 0.8);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(2px);
+}
+
+/* RGB neon border animado */
+ion-card.gaming-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(
+    90deg,
+    #ff00ff,
+    #00ffff,
+    #00ff66,
+    #ffff00,
+    #ff00ff,
+    #00ffff
+  );
+  background-size: 400% 100%;
+  animation: rgbMove 4s linear infinite;
+  opacity: 0.6;
+  z-index: -2;
+  filter: blur(12px);
+  border-radius: 24px;
+}
+
+/* Capa interna para contraste */
+ion-card.gaming-card::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: linear-gradient(145deg, #0c0020, #020008);
+  border-radius: 22px;
+  z-index: -1;
+}
+
+/* Efecto hover/active táctil */
+ion-card.gaming-card:active {
+  transform: scale(0.98);
+  transition: transform 0.08s ease;
+}
+
+/* LED strip decorativo inferior */
+.gaming-led-strip {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #ff00ff, #00ffff, #ff00ff);
+  animation: rgbMove 2s linear infinite;
+  background-size: 200% 100%;
+  opacity: 0.8;
+}
+
+/* =====================
+   HEADER Y TEXTO
+   ===================== */
+.gadget-header {
+  padding: 16px 16px 8px 16px;
+}
+
+.gadget-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Thumbnail gamer */
+ion-thumbnail.gaming-thumb {
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  background: #000;
+  border: 2px solid #00ffff;
+  box-shadow: 
+    0 0 15px #00ffff,
+    inset 0 0 10px #ff00ff;
+  transition: all 0.2s;
+}
+
+ion-thumbnail.gaming-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.gadget-noimg {
+  background: linear-gradient(135deg, #ff00ff, #00ffff);
+  color: #000;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-weight: bold;
+}
+
+/* Títulos */
+.gaming-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-shadow: 
+    0 0 5px #00ffff,
+    0 0 10px #ff00ff;
+}
+
+.gaming-subtitle {
+  color: #b0b0ff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* =====================
+   CHIPS RGB MEJORADOS
+   ===================== */
+.gadget-chips.gaming-chips {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.gadget-chips.gaming-chips ion-chip {
+  --background: rgba(0, 255, 255, 0.12);
+  --color: #0ff;
+  border: 1px solid rgba(0, 255, 255, 0.6);
+  font-size: 11px;
+  height: 26px;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+}
+
+.price-chip {
+  --background: rgba(0, 255, 102, 0.2) !important;
+  --color: #0f6 !important;
+  box-shadow: 0 0 8px #0f6;
+}
+
+.stock-chip {
+  --background: rgba(255, 255, 0, 0.15) !important;
+  --color: #ff0 !important;
+  box-shadow: 0 0 6px #ff0;
+}
+
+.category-chip {
+  --background: rgba(255, 0, 255, 0.2) !important;
+  --color: #f0f !important;
+  box-shadow: 0 0 8px #f0f;
+}
+
+/* =====================
+   DESCRIPCIÓN
+   ===================== */
+.gaming-desc {
+  color: #c0c0e0;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 12px 0;
+  padding: 8px;
+  background: rgba(0, 255, 255, 0.05);
+  border-radius: 12px;
+  border-left: 3px solid #0ff;
+}
+
+/* =====================
+   MEDIA CHIPS
+   ===================== */
+.gaming-media {
+  margin: 8px 0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.media-chip {
+  --background: rgba(255, 0, 0, 0.2) !important;
+  --color: #ff6666 !important;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+
+/* =====================
+   BOTONES GAMER PRO
+   ===================== */
+.gaming-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.gaming-btn {
+  --border-radius: 30px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+}
+
+.gaming-btn:active {
+  transform: scale(0.94);
+}
+
+/* Botón Ver */
+.gaming-btn[color="primary"] {
+  --background: linear-gradient(135deg, #00ccff, #0066ff);
+  --box-shadow: 0 0 15px #00ccff;
+}
+
+/* Botón Editar */
+.gaming-btn[color="warning"] {
+  --background: linear-gradient(135deg, #ffcc00, #ff8800);
+  --color: #000;
+  --box-shadow: 0 0 15px #ffcc00;
+}
+
+/* Botón Eliminar */
+.gaming-btn[color="danger"] {
+  --background: linear-gradient(135deg, #ff0044, #cc0000);
+  --box-shadow: 0 0 15px #ff0044;
+}
+
+/* =====================
+   TOOLBAR RGB
+   ===================== */
+ion-toolbar {
+  --background: linear-gradient(135deg, #000000, #0a0020);
+  --color: #00ffff;
+  --border-color: #ff00ff;
+  border-bottom: 2px solid;
+  border-image: linear-gradient(90deg, #ff00ff, #00ffff) 1;
+  text-shadow: 0 0 8px cyan;
+}
+
+ion-title {
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+}
+
+/* =====================
+   FAB RGB PULSANTE
+   ===================== */
+.gaming-fab {
+  --background: linear-gradient(135deg, #ff00ff, #00ffff);
+  --background-activated: linear-gradient(135deg, #cc00cc, #00cccc);
+  box-shadow: 
+    0 0 30px #ff00ff,
+    0 0 60px #00ffff;
+  animation: pulseGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff; }
+  50% { box-shadow: 0 0 40px #ff00ff, 0 0 80px #00ffff; }
+}
+
+/* =====================
+   EMPTY STATE GAMER
+   ===================== */
+.gaming-empty {
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 32px;
+  border: 1px solid #00ffff;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+  margin: 20px;
+}
+
+.empty-icon {
+  font-size: 70px;
+  animation: floatIcon 2s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.gaming-empty p {
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* =====================
+   ANIMACIONES RGB
+   ===================== */
+@keyframes rgbMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* =====================
+   📱 RESPONSIVE MÓVIL
+   ===================== */
+@media (max-width: 480px) {
+  .gadget-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  ion-thumbnail.gaming-thumb {
+    width: 100%;
+    height: 180px;
+  }
+
+  .gaming-title {
+    font-size: 16px;
+  }
+
+  .gadget-chips.gaming-chips {
+    gap: 6px;
+  }
+
+  .gaming-actions {
+    justify-content: center;
+  }
+
+  .gaming-btn {
+    flex: 1;
+    min-width: 100px;
+  }
+
+  ion-card.gaming-card {
+    margin: 16px;
+    border-radius: 20px;
+  }
+
+  .gaming-led-strip {
+    height: 2px;
+  }
+}
+
+/* Scrollbar estilo gamer */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0015;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ff00ff, #00ffff);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #00ffff, #ff00ff);
+}

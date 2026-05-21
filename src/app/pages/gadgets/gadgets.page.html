@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>🎮 GADGETS PRO GAMER 🎧</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding gaming-content">
+
+  <ion-list class="gaming-list">
+    <ion-card *ngFor="let g of gadgets" class="gadget-card gaming-card">
+
+      <ion-card-header class="gadget-header">
+        <div class="gadget-row">
+
+          <ion-thumbnail class="gadget-thumb gaming-thumb">
+            <img
+              *ngIf="g.imagen_url; else sinImg"
+              [src]="g.imagen_url"
+              [alt]="g.nombre"
+            />
+            <ng-template #sinImg>
+              <div class="gadget-noimg">🎮</div>
+            </ng-template>
+          </ion-thumbnail>
+
+          <div class="gadget-info">
+            <ion-card-title class="gadget-title gaming-title">
+              {{ g.nombre }}
+            </ion-card-title>
+            <ion-card-subtitle class="gaming-subtitle">
+              ⚡ {{ g.marca }}
+            </ion-card-subtitle>
+
+            <div class="gadget-chips gaming-chips">
+              <ion-chip color="success" class="price-chip">
+                💰 ${{ g.precio }}
+              </ion-chip>
+              <ion-chip color="medium" class="stock-chip">
+                📦 Stock: {{ g.stock }}
+              </ion-chip>
+              <ion-chip *ngIf="g.categoria" color="tertiary" class="category-chip">
+                🏷️ {{ g.categoria }}
+              </ion-chip>
+            </div>
+          </div>
+
+        </div>
+      </ion-card-header>
+
+      <ion-card-content>
+
+        <p *ngIf="g.descripcion" class="gadget-desc gaming-desc">
+          {{ g.descripcion }}
+        </p>
+
+        <div class="gadget-media gaming-media">
+          <ion-chip *ngIf="g.video_url" color="danger" class="media-chip">
+            🎬 Video
+          </ion-chip>
+          <ion-chip *ngIf="g.audio_url" color="warning" class="media-chip">
+            🎧 Audio
+          </ion-chip>
+        </div>
+
+        <div class="gadget-actions gaming-actions">
+          <ion-button size="small" color="primary" [routerLink]="['/gadget-detalle', g.id]" class="gaming-btn">
+            <ion-icon name="eye-outline" slot="start"></ion-icon>
+            Ver
+          </ion-button>
+
+          <ion-button size="small" color="warning" [routerLink]="['/gadget-form', g.id]" class="gaming-btn">
+            <ion-icon name="create-outline" slot="start"></ion-icon>
+            Editar
+          </ion-button>
+
+          <ion-button size="small" color="danger" (click)="eliminar(g.id!)" class="gaming-btn">
+            <ion-icon name="trash-outline" slot="start"></ion-icon>
+            Eliminar
+          </ion-button>
+        </div>
+
+      </ion-card-content>
+
+      <!-- LED RGB decorativo en cada card -->
+      <div class="gaming-led-strip"></div>
+
+    </ion-card>
+  </ion-list>
+
+  <div *ngIf="gadgets.length === 0" class="empty-state gaming-empty">
+    <p class="empty-icon">🎮💀🎧</p>
+    <p>⚠️ No hay gadgets registrados aún ⚠️</p>
+    <p>🔥 Presiona el botón RGB + para agregar uno 🔥</p>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="primary" routerLink="/gadget-form" class="gaming-fab">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
