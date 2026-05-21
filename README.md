@@ -12,15 +12,13 @@
 
 
 |Detalle del gadget |
-
 <img width="190" height="561" alt="image" src="https://github.com/user-attachments/assets/588ba500-2e2b-4b52-902d-96646cfbfc81" />
+
+
 
 |Formulario |
 <img width="207" height="476" alt="image" src="https://github.com/user-attachments/assets/b831e7c3-1f83-43dd-8016-9e109a1113ee" />
 
-
-
-> _Reemplaza las rutas con las imágenes reales de tu proyecto._
 
 ---
 
