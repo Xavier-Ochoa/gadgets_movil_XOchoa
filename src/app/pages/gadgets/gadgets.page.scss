@@ -1,0 +1,285 @@
+// =============================================
+// GADGETS PAGE — ViewEncapsulation.None
+// Todos los selectores prefijados con app-gadgets
+// =============================================
+
+$bg-deep:        #0f1117;
+$bg-surface:     #16192a;
+$bg-card:        #1a1d2e;
+$border-subtle:  #252840;
+$accent-cyan:    #00d4ff;
+$accent-blue:    #4a6cf7;
+$accent-purple:  #7b2fff;
+$accent-green:   #10b981;
+$accent-orange:  #f59e0b;
+$accent-red:     #ef4444;
+$text-primary:   #e2e8f0;
+$text-secondary: #8892a4;
+$text-muted:     #4a5568;
+
+app-gadgets {
+
+  ion-content.gadgets-content {
+    --background: #{$bg-deep};
+    --color: #{$text-primary};
+  }
+
+  // ---- Toolbar ----
+  .tech-toolbar {
+    --background: #{$bg-surface};
+    --border-color: #{$border-subtle};
+    --color: #{$text-primary};
+    border-bottom: 1px solid $border-subtle;
+
+    .tech-toolbar-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: $text-primary;
+
+      .title-icon { color: $accent-cyan; font-size: 20px; }
+      .title-accent {
+        color: $accent-cyan;
+        text-shadow: 0 0 10px rgba($accent-cyan, 0.5);
+      }
+    }
+    .logout-btn {
+      --color: #{$text-secondary};
+      &:hover { --color: #{$accent-red}; }
+    }
+  }
+
+  // =============================================
+  // GRID 3 columnas — dentro del scroll de ion-content
+  // =============================================
+  .gadget-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px;
+    padding: 20px 20px 100px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  // =============================================
+  // CARD
+  // =============================================
+  .gadget-card {
+    background: $bg-card;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid $border-subtle;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    min-width: 0; // evita desborde en grid
+
+    &:hover {
+      transform: translateY(-4px);
+      border-color: rgba($accent-blue, 0.5);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.55), 0 0 0 1px rgba($accent-blue, 0.15);
+    }
+  }
+
+  // ---- Imagen ----
+  .card-img-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: $bg-surface;
+
+    .card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    &:hover .card-img { transform: scale(1.04); }
+
+    .card-img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      ion-icon {
+        font-size: 48px;
+        color: rgba($accent-cyan, 0.15);
+      }
+    }
+
+    .badge-category {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba($accent-blue, 0.88);
+      backdrop-filter: blur(6px);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.12);
+      white-space: nowrap;
+      max-width: calc(100% - 20px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  // ---- Info ----
+  .card-info {
+    padding: 14px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+  }
+
+  .card-nombre {
+    font-size: 14px;
+    font-weight: 700;
+    color: $text-primary;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.3;
+  }
+
+  .card-marca {
+    font-size: 11px;
+    color: $text-secondary;
+    margin: 0;
+    letter-spacing: 0.3px;
+  }
+
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 4px;
+  }
+
+  .meta-precio,
+  .meta-stock {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    ion-icon { font-size: 14px; }
+  }
+
+  .meta-precio {
+    color: lighten($accent-green, 8%);
+    ion-icon { color: lighten($accent-green, 8%); }
+  }
+  .meta-stock {
+    color: $text-secondary;
+    ion-icon { color: $accent-orange; }
+  }
+
+  // ---- Acciones ----
+  .card-actions {
+    display: flex;
+    gap: 7px;
+    margin-top: 10px;
+    align-items: center;
+  }
+
+  .btn-detalles {
+    flex: 1;
+    padding: 9px 0;
+    background: $accent-blue;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 3px 12px rgba($accent-blue, 0.35);
+    ion-icon { font-size: 15px; }
+
+    &:hover {
+      background: lighten($accent-blue, 8%);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba($accent-blue, 0.45);
+    }
+    &:active { transform: translateY(0); }
+  }
+
+  .btn-icon {
+    width: 36px;
+    height: 36px;
+    border: 1px solid $border-subtle;
+    border-radius: 9px;
+    background: rgba(255,255,255,0.03);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+    flex-shrink: 0;
+    ion-icon { font-size: 15px; }
+
+    &.btn-edit {
+      color: $accent-orange;
+      &:hover { background: rgba($accent-orange, 0.12); border-color: rgba($accent-orange, 0.35); }
+    }
+    &.btn-del {
+      color: $accent-red;
+      &:hover { background: rgba($accent-red, 0.12); border-color: rgba($accent-red, 0.35); }
+    }
+  }
+
+  // ---- Empty ----
+  .empty-state {
+    text-align: center;
+    padding: 80px 20px;
+    color: $text-secondary;
+
+    .empty-icon {
+      font-size: 64px;
+      color: rgba($accent-cyan, 0.15);
+      display: block;
+      margin-bottom: 20px;
+    }
+    .empty-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: $text-secondary;
+      margin: 0 0 8px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .empty-sub {
+      font-size: 13px;
+      color: $text-muted;
+      margin: 0;
+    }
+  }
+
+  // ---- FAB ----
+  .fab-add {
+    --background: #{$accent-blue};
+    --color: #fff;
+    box-shadow: 0 4px 20px rgba($accent-blue, 0.45);
+  }
+}

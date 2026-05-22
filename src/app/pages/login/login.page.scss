@@ -1,0 +1,341 @@
+// =============================================
+// LOGIN PAGE — Dark Tech Theme
+// =============================================
+
+// Variables de tema oscuro tecnológico
+$bg-deep:        #080c14;
+$bg-surface:     #0d1421;
+$bg-card:        #111827;
+$border-subtle:  #1e2d45;
+$border-glow:    #00d4ff;
+$accent-cyan:    #00d4ff;
+$accent-blue:    #0066ff;
+$accent-purple:  #7b2fff;
+$text-primary:   #e2e8f0;
+$text-secondary: #64748b;
+$text-muted:     #374151;
+$success:        #10b981;
+$danger:         #ef4444;
+
+// ---- Content base ----
+.login-content {
+  --background: #{$bg-deep};
+  --color: #{$text-primary};
+}
+
+// ---- Fondo tecnológico ----
+.tech-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  .grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+  }
+
+  .glow-1 {
+    width: 400px;
+    height: 400px;
+    background: $accent-blue;
+    top: -100px;
+    right: -100px;
+  }
+
+  .glow-2 {
+    width: 300px;
+    height: 300px;
+    background: $accent-purple;
+    bottom: -50px;
+    left: -80px;
+  }
+}
+
+// ---- Contenedor principal ----
+.login-container {
+  position: relative;
+  z-index: 1;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  gap: 24px;
+}
+
+// ---- Header / Logo ----
+.login-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  .logo-wrapper {
+    width: 72px;
+    height: 72px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, $accent-blue, $accent-purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+      0 0 20px rgba(0, 102, 255, 0.4),
+      0 0 40px rgba(0, 102, 255, 0.15);
+    margin-bottom: 4px;
+
+    .logo-icon {
+      font-size: 36px;
+      color: #fff;
+    }
+  }
+
+  .app-title {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: $text-primary;
+    margin: 0;
+
+    .accent {
+      color: $accent-cyan;
+      text-shadow: 0 0 12px rgba(0, 212, 255, 0.6);
+    }
+  }
+
+  .app-subtitle {
+    font-size: 13px;
+    color: $text-secondary;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+}
+
+// ---- Tarjeta del formulario ----
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: $bg-card;
+  border-radius: 16px;
+  border: 1px solid $border-subtle;
+  overflow: hidden;
+  box-shadow:
+    0 4px 32px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(0, 212, 255, 0.05);
+
+  .card-top-bar {
+    height: 2px;
+    background: linear-gradient(90deg, $accent-blue, $accent-cyan, $accent-purple);
+  }
+
+  .card-body {
+    padding: 28px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+
+// ---- Input groups ----
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  .input-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: $text-secondary;
+
+    ion-icon {
+      font-size: 14px;
+      color: $accent-cyan;
+    }
+  }
+
+  .input-wrapper {
+    background: $bg-surface;
+    border: 1px solid $border-subtle;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+    &:focus-within {
+      border-color: rgba($accent-cyan, 0.5);
+      box-shadow: 0 0 0 2px rgba($accent-cyan, 0.08), 0 0 12px rgba($accent-cyan, 0.1);
+    }
+  }
+
+  .password-wrapper {
+    display: flex;
+    align-items: center;
+    padding-right: 8px;
+  }
+}
+
+.tech-input {
+  --background: transparent;
+  --color: #{$text-primary};
+  --placeholder-color: #{$text-muted};
+  --placeholder-opacity: 1;
+  --padding-start: 14px;
+  --padding-end: 14px;
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+  font-size: 14px;
+  flex: 1;
+}
+
+.toggle-pass {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: $text-secondary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $accent-cyan;
+  }
+
+  ion-icon {
+    font-size: 18px;
+  }
+}
+
+// ---- Mensaje de feedback ----
+.mensaje-box {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+
+  &.error {
+    background: rgba($danger, 0.1);
+    border: 1px solid rgba($danger, 0.3);
+    color: lighten($danger, 15%);
+  }
+
+  &.success {
+    background: rgba($success, 0.1);
+    border: 1px solid rgba($success, 0.3);
+    color: lighten($success, 10%);
+  }
+}
+
+// ---- Botón primario ----
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, $accent-blue, darken($accent-cyan, 10%));
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba($accent-blue, 0.35);
+
+  &:hover:not(:disabled) {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba($accent-blue, 0.45);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .btn-spinner {
+    width: 18px;
+    height: 18px;
+    --color: #fff;
+  }
+}
+
+// ---- Divider ----
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  span {
+    flex: 1;
+    height: 1px;
+    background: $border-subtle;
+  }
+
+  p {
+    font-size: 12px;
+    color: $text-muted;
+    margin: 0;
+  }
+}
+
+// ---- Botón secundario ----
+.btn-secondary {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid $border-subtle;
+  border-radius: 10px;
+  background: transparent;
+  color: $text-secondary;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  letter-spacing: 0.5px;
+
+  &:hover:not(:disabled) {
+    border-color: rgba($accent-cyan, 0.4);
+    color: $accent-cyan;
+    background: rgba($accent-cyan, 0.04);
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
+// ---- Footer ----
+.login-footer {
+  font-size: 11px;
+  color: $text-muted;
+  letter-spacing: 0.5px;
+  margin: 0;
+}

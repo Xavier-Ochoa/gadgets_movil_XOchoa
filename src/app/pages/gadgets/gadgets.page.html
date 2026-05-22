@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar class="tech-toolbar">
+    <ion-title class="tech-toolbar-title">
+      <ion-icon name="hardware-chip-outline" class="title-icon"></ion-icon>
+      GADGET<span class="title-accent">HUB</span>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirmarLogout()" class="logout-btn">
+        <ion-icon name="log-out-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="gadgets-content">
+
+  <div class="gadget-grid">
+    <div *ngFor="let g of gadgets" class="gadget-card">
+
+      <!-- Imagen principal -->
+      <div class="card-img-wrap">
+        <img
+          *ngIf="g.imagen_url; else sinImg"
+          [src]="g.imagen_url"
+          [alt]="g.nombre"
+          class="card-img"
+        />
+        <ng-template #sinImg>
+          <div class="card-img-placeholder">
+            <ion-icon name="hardware-chip-outline"></ion-icon>
+          </div>
+        </ng-template>
+        <!-- Badge categoría sobre la imagen -->
+        <span *ngIf="g.categoria" class="badge-category">{{ g.categoria }}</span>
+      </div>
+
+      <!-- Info inferior -->
+      <div class="card-info">
+        <p class="card-nombre">{{ g.nombre }}</p>
+        <p class="card-marca">{{ g.marca }}</p>
+
+        <div class="card-meta">
+          <span class="meta-precio">
+            <ion-icon name="cash-outline"></ion-icon>
+            ${{ g.precio }}
+          </span>
+          <span class="meta-stock">
+            <ion-icon name="cube-outline"></ion-icon>
+            Stock: {{ g.stock }}
+          </span>
+        </div>
+
+        <!-- Acciones -->
+        <div class="card-actions">
+          <button class="btn-detalles" [routerLink]="['/gadget-detalle', g.id]">
+            <ion-icon name="eye-outline"></ion-icon>
+            Detalles
+          </button>
+          <button class="btn-icon btn-edit" [routerLink]="['/gadget-form', g.id]">
+            <ion-icon name="create-outline"></ion-icon>
+          </button>
+          <button class="btn-icon btn-del" (click)="eliminar(g.id!)">
+            <ion-icon name="trash-outline"></ion-icon>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div *ngIf="gadgets.length === 0" class="empty-state">
+    <ion-icon name="hardware-chip-outline" class="empty-icon"></ion-icon>
+    <p class="empty-title">Sin gadgets registrados</p>
+    <p class="empty-sub">Presiona <strong>+</strong> para agregar el primero</p>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button class="fab-add" routerLink="/gadget-form">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

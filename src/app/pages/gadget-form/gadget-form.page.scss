@@ -1,0 +1,434 @@
+/* ==========================================
+   🎮 GAMER RGB THEME - FORMULARIO GADGET 🎧
+   ========================================== */
+
+/* Fondo principal con efecto cyber */
+ion-content {
+  --background: radial-gradient(circle at 30% 20%, #0a0015, #000000 95%);
+  position: relative;
+}
+
+/* Overlay de rejilla gamer */
+ion-content::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 0, 255, 0.04) 1px, transparent 1px);
+  background-size: 35px 35px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* =====================
+   TOOLBAR RGB
+   ===================== */
+ion-toolbar {
+  --background: linear-gradient(135deg, #000000, #0a0020);
+  --color: #00ffff;
+  --border-color: #ff00ff;
+  border-bottom: 2px solid;
+  border-image: linear-gradient(90deg, #ff00ff, #00ffff, #ff00ff) 1;
+  text-shadow: 0 0 8px cyan;
+}
+
+ion-title {
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #00ffff, #ff00ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+}
+
+ion-back-button {
+  --color: #00ffff;
+  --color-hover: #ff00ff;
+  text-shadow: 0 0 5px cyan;
+}
+
+/* =====================
+   PREVIEW IMAGEN RGB
+   ===================== */
+/* Contenedor de preview */
+div[style*="display:flex; justify-content:center; margin-bottom: 16px;"] > div {
+  position: relative;
+  background: linear-gradient(135deg, #0a0015, #000) !important;
+  border: 2px solid rgba(0, 255, 255, 0.6) !important;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), 0 0 10px rgba(255, 0, 255, 0.3) !important;
+  transition: all 0.3s ease;
+}
+
+div[style*="display:flex; justify-content:center; margin-bottom: 16px;"] > div:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.7) !important;
+}
+
+/* Imagen preview */
+div[style*="display:flex; justify-content:center; margin-bottom: 16px;"] img {
+  transition: transform 0.3s ease;
+}
+
+div[style*="display:flex; justify-content:center; margin-bottom: 16px;"] img:hover {
+  transform: scale(1.05);
+}
+
+/* Span sin imagen */
+div[style*="display:flex; justify-content:center; margin-bottom: 16px;"] span {
+  background: linear-gradient(135deg, #ff00ff, #00ffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rgbPulse 2s ease-in-out infinite;
+  font-size: 48px;
+}
+
+/* =====================
+   BOTONES DE SUBIDA RGB
+   ===================== */
+/* Botón subir imagen */
+div[style*="display:flex; justify-content:center; margin-bottom: 20px;"] label {
+  position: relative;
+  background: linear-gradient(135deg, #00ccff, #0066ff) !important;
+  border: 1px solid rgba(0, 255, 255, 0.5);
+  border-radius: 30px !important;
+  padding: 10px 24px !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 13px;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 15px rgba(0, 204, 255, 0.5);
+  overflow: hidden;
+}
+
+div[style*="display:flex; justify-content:center; margin-bottom: 20px;"] label::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+div[style*="display:flex; justify-content:center; margin-bottom: 20px;"] label:hover::before {
+  left: 100%;
+}
+
+div[style*="display:flex; justify-content:center; margin-bottom: 20px;"] label:active {
+  transform: scale(0.96);
+}
+
+/* Botón subir audio */
+div[style*="display:flex; justify-content:center; margin: 8px 0 20px;"] label {
+  position: relative;
+  background: linear-gradient(135deg, #ffcc00, #ff8800) !important;
+  color: #000 !important;
+  border: 1px solid rgba(255, 204, 0, 0.5);
+  border-radius: 30px !important;
+  padding: 10px 24px !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 13px;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+  overflow: hidden;
+}
+
+div[style*="display:flex; justify-content:center; margin: 8px 0 20px;"] label::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+div[style*="display:flex; justify-content:center; margin: 8px 0 20px;"] label:hover::before {
+  left: 100%;
+}
+
+div[style*="display:flex; justify-content:center; margin: 8px 0 20px;"] label:active {
+  transform: scale(0.96);
+}
+
+/* Spinners de carga */
+ion-spinner {
+  --color: linear-gradient(135deg, #00ffff, #ff00ff);
+  width: 20px;
+  height: 20px;
+  animation: spinGlow 1s linear infinite;
+}
+
+/* =====================
+   ITEMS DE FORMULARIO RGB
+   ===================== */
+ion-item {
+  --background: linear-gradient(145deg, #0c0020, #020008);
+  --border-color: rgba(0, 255, 255, 0.3);
+  --border-style: solid;
+  --border-width: 1px;
+  --border-radius: 16px;
+  margin-bottom: 16px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --inner-padding-end: 0;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Neon glow en items al focus */
+ion-item:focus-within {
+  --border-color: #00ffff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  transform: translateX(4px);
+}
+
+/* Labels */
+ion-label {
+  --color: #00ffff !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 3px rgba(0, 255, 255, 0.5);
+}
+
+/* Inputs y textareas */
+ion-input, ion-textarea {
+  --color: #ffffff;
+  --placeholder-color: #8888aa;
+  --placeholder-opacity: 0.7;
+  --padding-start: 0;
+  font-weight: 500;
+}
+
+ion-input::part(native), 
+ion-textarea::part(native) {
+  background: rgba(0, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+/* =====================
+   BOTÓN GUARDAR PRINCIPAL RGB
+   ===================== */
+ion-button[expand="block"] {
+  --border-radius: 40px;
+  --background: linear-gradient(135deg, #00ff66, #00cc44);
+  --background-activated: linear-gradient(135deg, #00cc44, #009933);
+  --color: #000;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  --box-shadow: 0 0 25px rgba(0, 255, 102, 0.5);
+  transition: all 0.2s ease;
+  height: 52px;
+}
+
+ion-button[expand="block"]:active {
+  transform: scale(0.97);
+}
+
+ion-button[expand="block"]:disabled {
+  --background: linear-gradient(135deg, #666, #444);
+  --box-shadow: none;
+  opacity: 0.6;
+}
+
+/* Spinner dentro del botón */
+ion-button[expand="block"] ion-spinner {
+  width: 20px;
+  height: 20px;
+  --color: #000;
+}
+
+/* =====================
+   EFECTOS ESPECIALES
+   ===================== */
+/* Efecto de brillo en items al hacer hover */
+ion-item:hover {
+  --border-color: rgba(0, 255, 255, 0.6);
+  transition: all 0.2s ease;
+}
+
+/* Decoración RGB para items (línea lateral) */
+ion-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10%;
+  width: 3px;
+  height: 80%;
+  background: linear-gradient(180deg, #ff00ff, #00ffff);
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+ion-item:focus-within::before {
+  opacity: 1;
+}
+
+/* Estilo para los placeholders */
+::placeholder {
+  color: #8888aa;
+  text-shadow: none;
+}
+
+/* =====================
+   CHECKBOX Y RADIO (si los hay)
+   ===================== */
+ion-checkbox {
+  --checkbox-background-checked: linear-gradient(135deg, #00ffff, #ff00ff);
+  --border-color-checked: #00ffff;
+  --checkmark-color: #000;
+}
+
+/* =====================
+   SELECTS
+   ===================== */
+ion-select {
+  --placeholder-color: #8888aa;
+  --placeholder-opacity: 0.7;
+  --background: rgba(0, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+/* =====================
+   ANIMACIONES RGB
+   ===================== */
+@keyframes rgbMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes spinGlow {
+  0% { transform: rotate(0deg); filter: drop-shadow(0 0 3px cyan); }
+  100% { transform: rotate(360deg); filter: drop-shadow(0 0 8px magenta); }
+}
+
+@keyframes rgbPulse {
+  0%, 100% { text-shadow: 0 0 5px #ff00ff; opacity: 1; }
+  50% { text-shadow: 0 0 20px #00ffff; opacity: 0.9; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 15px rgba(0, 255, 255, 0.3); }
+  50% { box-shadow: 0 0 25px rgba(0, 255, 255, 0.6); }
+}
+
+/* =====================
+   📱 RESPONSIVE MÓVIL
+   ===================== */
+@media (max-width: 480px) {
+  /* Preview imagen más pequeña */
+  div[style*="display:flex; justify-content:center; margin-bottom: 16px;"] > div {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  
+  div[style*="display:flex; justify-content:center; margin-bottom: 16px;"] span {
+    font-size: 40px;
+  }
+  
+  /* Botones más compactos */
+  div[style*="display:flex; justify-content:center; margin-bottom: 20px;"] label,
+  div[style*="display:flex; justify-content:center; margin: 8px 0 20px;"] label {
+    padding: 8px 18px !important;
+    font-size: 11px;
+  }
+  
+  /* Items con menos padding */
+  ion-item {
+    margin-bottom: 12px;
+    --padding-start: 12px;
+    --padding-end: 12px;
+  }
+  
+  /* Botón guardar más pequeño */
+  ion-button[expand="block"] {
+    font-size: 14px;
+    height: 48px;
+    margin-top: 16px;
+  }
+  
+  ion-label {
+    font-size: 13px;
+  }
+  
+  ion-input, ion-textarea {
+    font-size: 14px;
+  }
+}
+
+/* =====================
+   SCROLLBAR GAMER
+   ===================== */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0015;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ff00ff, #00ffff);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #00ffff, #ff00ff);
+}
+
+/* =====================
+   EFECTOS ADICIONALES
+   ===================== */
+/* Animación de pulso para botones de subida */
+div[style*="display:flex; justify-content:center; margin-bottom: 20px;"] label,
+div[style*="display:flex; justify-content:center; margin: 8px 0 20px;"] label {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* Efecto de texto neón en los labels cuando el input está enfocado */
+ion-item:focus-within ion-label {
+  text-shadow: 0 0 8px #00ffff;
+  transition: text-shadow 0.2s ease;
+}
+
+/* Mensajes de error (si los tienes) */
+ion-note {
+  --color: #ff0044;
+  text-shadow: 0 0 3px #ff0044;
+  font-weight: 500;
+}
+
+/* Tooltips y ayudas */
+ion-text[color="medium"] {
+  color: #8888aa !important;
+}
+
+/* Inputs numéricos - spinner personalizado */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  background: linear-gradient(135deg, #00ffff, #ff00ff);
+  border-radius: 4px;
+  padding: 2px;
+  opacity: 0.7;
+}

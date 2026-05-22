@@ -1,0 +1,111 @@
+<ion-content class="login-content">
+
+  <!-- Fondo con grid tecnológico -->
+  <div class="tech-bg">
+    <div class="grid-overlay"></div>
+    <div class="glow-orb glow-1"></div>
+    <div class="glow-orb glow-2"></div>
+  </div>
+
+  <div class="login-container">
+
+    <!-- Logo / Header -->
+    <div class="login-header">
+      <div class="logo-wrapper">
+        <ion-icon name="hardware-chip-outline" class="logo-icon"></ion-icon>
+      </div>
+      <h1 class="app-title">GADGET<span class="accent">HUB</span></h1>
+      <p class="app-subtitle">{{ modoRegistro ? 'Crea tu cuenta' : 'Accede al sistema' }}</p>
+    </div>
+
+    <!-- Card del formulario -->
+    <div class="login-card">
+
+      <!-- Línea superior decorativa -->
+      <div class="card-top-bar"></div>
+
+      <div class="card-body">
+
+        <!-- Campo Email -->
+        <div class="input-group">
+          <label class="input-label">
+            <ion-icon name="mail-outline"></ion-icon>
+            Correo electrónico
+          </label>
+          <div class="input-wrapper">
+            <ion-input
+              type="email"
+              [(ngModel)]="email"
+              placeholder="usuario@ejemplo.com"
+              class="tech-input"
+              [disabled]="cargando">
+            </ion-input>
+          </div>
+        </div>
+
+        <!-- Campo Contraseña -->
+        <div class="input-group">
+          <label class="input-label">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            Contraseña
+          </label>
+          <div class="input-wrapper password-wrapper">
+            <ion-input
+              [type]="mostrarPassword ? 'text' : 'password'"
+              [(ngModel)]="password"
+              placeholder="••••••••"
+              class="tech-input"
+              [disabled]="cargando">
+            </ion-input>
+            <button class="toggle-pass" (click)="togglePassword()" type="button">
+              <ion-icon [name]="mostrarPassword ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+            </button>
+          </div>
+        </div>
+
+        <!-- Credenciales de prueba -->
+        <div class="demo-hint">
+          Prueba: <strong>lxoc8888@gmail.com</strong> / <strong>12345678</strong>
+        </div>
+
+        <!-- Mensaje de error/éxito -->
+        <div *ngIf="mensaje" class="mensaje-box" [class.error]="tipoMensaje === 'danger'" [class.success]="tipoMensaje === 'success'">
+          <span>{{ mensaje }}</span>
+        </div>
+
+        <!-- Botón principal -->
+        <button
+          class="btn-primary"
+          (click)="modoRegistro ? register() : login()"
+          [disabled]="cargando"
+          type="button">
+          <ion-spinner name="crescent" *ngIf="cargando" class="btn-spinner"></ion-spinner>
+          <span *ngIf="!cargando">{{ modoRegistro ? 'REGISTRARSE' : 'INICIAR SESIÓN' }}</span>
+          <span *ngIf="cargando">{{ modoRegistro ? 'CREANDO...' : 'AUTENTICANDO...' }}</span>
+        </button>
+
+        <!-- Divider -->
+        <div class="divider">
+          <span></span>
+          <p>o</p>
+          <span></span>
+        </div>
+
+        <!-- Botón secundario -->
+        <button
+          class="btn-secondary"
+          (click)="toggleModo()"
+          [disabled]="cargando"
+          type="button">
+          {{ modoRegistro ? 'Ya tengo una cuenta' : 'Crear cuenta nueva' }}
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <p class="login-footer">GadgetHub &copy; 2025 — Sistema seguro</p>
+
+  </div>
+
+</ion-content>

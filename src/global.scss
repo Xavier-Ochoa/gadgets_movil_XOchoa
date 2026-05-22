@@ -1,0 +1,45 @@
+@import "@ionic/angular/css/core.css";
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+// Always dark — override system preference
+@import '@ionic/angular/css/palettes/dark.always.css';
+
+// Global tech typography
+* {
+  font-family: 'Inter', 'SF Pro Display', system-ui, -apple-system, sans-serif;
+}
+
+// Tech loading overlay
+.tech-loading {
+  --background: #111827;
+  --spinner-color: #00d4ff;
+  --color: #e2e8f0;
+}
+
+// Tech alert dialog
+.tech-alert {
+  --background: #111827;
+  --color: #e2e8f0;
+
+  .alert-title { color: #e2e8f0 !important; }
+  .alert-message { color: #64748b !important; }
+  .alert-button { color: #00d4ff !important; }
+  .alert-button.alert-button-role-destructive { color: #ef4444 !important; }
+}
+
+// Scrollbar estético
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #080c14; }
+::-webkit-scrollbar-thumb {
+  background: #1e2d45;
+  border-radius: 4px;
+  &:hover { background: #00d4ff; }
+}
