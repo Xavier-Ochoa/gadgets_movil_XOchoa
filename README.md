@@ -1,6 +1,6 @@
 # 📱 Gadgets Tecnológicos — App Móvil
 
-> **⬇️ Descargar APK:** [https://drive.google.com/file/d/1LqPGu8ujfExTMA-nV431_Woh7ATnri19/view?usp=sharing](https://drive.google.com/file/d/1LqPGu8ujfExTMA-nV431_Woh7ATnri19/view?usp=sharing)
+> **⬇️ Descargar APK (sin firma):** [https://drive.google.com/file/d/1LqPGu8ujfExTMA-nV431_Woh7ATnri19/view?usp=sharing](https://drive.google.com/file/d/1LqPGu8ujfExTMA-nV431_Woh7ATnri19/view?usp=sharing)
 
 ---
 
