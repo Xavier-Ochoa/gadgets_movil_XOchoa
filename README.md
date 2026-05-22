@@ -6,6 +6,12 @@
 
 ## 📸 Capturas de pantalla
 
+LOGIN 
+<img width="632" height="748" alt="image" src="https://github.com/user-attachments/assets/6c80ccef-fa68-4f22-8761-956bd878856f" />
+
+
+
+
 <!-- Agrega aquí las imágenes de la app -->
 | Pantalla principal | 
 <img width="420" height="580" alt="image" src="https://github.com/user-attachments/assets/4018f249-5b0d-4ca3-8bb6-7f265accadaa" />
