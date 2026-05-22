@@ -90,6 +90,7 @@ GADGETS-MOVIL/
 │   │   │   ├── gadgets/          # Lista principal de gadgets
 │   │   │   ├── gadget-form/      # Formulario crear/editar
 │   │   │   └── gadget-detalle/   # Vista de detalle con media
+            └── login/   # 
 │   │   ├── services/
 │   │   │   └── gadgets.ts        # Servicio CRUD + Supabase Storage
 │   │   ├── app.routes.ts         # Rutas de la aplicación
